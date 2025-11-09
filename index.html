@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards — Oefenen</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="page">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1 class="brand-title">📜 DeSinon's Flashcards</h1>
+      </div>
+
+      <nav class="nav-links">
+<div id="user-box" class="user-box">
+  <div id="user-info" class="user-info hidden">
+    Ingelogd als <strong id="user-name-label"></strong>
+    <button id="btn-logout" class="btn small">Log uit</button>
+  </div>
+  <div id="user-auth" class="user-auth">
+    <input type="text" id="auth-username" placeholder="gebruikersnaam" />
+    <input type="password" id="auth-password" placeholder="wachtwoord" />
+    <div class="auth-actions">
+      <button id="btn-login" class="btn small">Login</button>
+      <button id="btn-signup" class="btn small btn-gold">Nieuw</button>
+    </div>
+  </div>
+</div>
+        <a class="nav-link active" href="index.html">Home</a>
+      <a id="link-edit" class="nav-link" href="#">Deck bewerken</a>
+        <a class="nav-link" href="about.html">Over</a>
+      </nav>
+
+      <div class="deck-input">
+        <input type="text" id="deck-name" placeholder="Nieuw deck..." />
+        <button id="deck-add" class="btn btn-gold small">+</button>
+      </div>
+
+      <ul id="deck-list" class="deck-list"></ul>
+
+      <div class="stats-box">
+        <p><span id="stat-decks">0</span> decks</p>
+        <p><span id="stat-cards">0</span> kaarten</p>
+        <p>Laatst: <span id="stat-last">-</span></p>
+      </div>
+
+      <div class="signature">DeSinon / Toff</div>
+    </aside>
+
+    <main class="main-area">
+      <div class="top-actions">
+        <div class="title-stack">
+          <h2 id="current-deck-title">Kies een deck</h2>
+          <small>Oefen je kaarten in de kaart hieronder</small>
+        </div>
+        <div class="action-row">
+          <button id="btn-add" class="btn btn-gold">Nieuwe kaart</button>
+          <button id="btn-edit-deck" class="btn">Bewerk dit deck</button>
+          <button id="btn-clear" class="btn btn-danger">Alles wissen</button>
+        </div>
+      </div>
+
+      <section class="study-stage">
+        <div class="study-filters">
+          <button class="btn small study-mode active" data-mode="all">Alle</button>
+          <button class="btn small study-mode" data-mode="fav">Favorieten</button>
+          <button class="btn small study-mode" data-mode="hard">Moeilijk</button>
+        </div>
+
+        <div class="flip-card" id="flip-card">
+          <div class="flip-card-inner" id="flip-card-inner">
+            <div class="flip-card-front">
+              <p class="question-text">Geen kaarten.</p>
+            </div>
+            <div class="flip-card-back">
+              <p class="answer-text">---</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="study-controls">
+          <button id="study-prev" class="btn small">◀</button>
+          <button id="study-flip" class="btn btn-gold">Draai</button>
+          <button id="study-next" class="btn small">▶</button>
+        </div>
+
+        <p class="hint">Tip: klik ook op de kaart om te draaien</p>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modal-backdrop">
+    <div class="modal">
+      <h3>Kaart</h3>
+      <label for="q">Vraag</label>
+      <textarea id="q"></textarea>
+      <label for="a">Antwoord</label>
+      <textarea id="a"></textarea>
+      <div class="modal-actions">
+        <button id="modal-save" class="btn btn-gold">Opslaan</button>
+        <button id="modal-cancel" class="btn">Annuleren</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
